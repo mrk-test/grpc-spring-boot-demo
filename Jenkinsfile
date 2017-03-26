@@ -9,3 +9,8 @@ node {
         bat mvnCommand
     }
 }
+
+stage 'Archive Artifacts'
+node {
+    archiveArtifacts artifacts: 'grpc-spring-boot-demo-server/target/*.jar', fingerprint: true
+}
