@@ -2,7 +2,7 @@ stage 'Build'
 node {
     checkout scm
     def mvnHome = tool 'M3'
-    def mvnCommand = "$mvnHome/bin/mvn clean install"
+    def mvnCommand = "$mvnHome/bin/mvn clean install -DskipTests"
     if (isUnix()) {
         sh mvnCommand
     } else {
