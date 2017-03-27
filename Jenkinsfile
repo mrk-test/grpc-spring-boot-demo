@@ -15,7 +15,7 @@ node {
     archiveArtifacts artifacts: 'grpc-spring-boot-demo-server/target/*.jar', fingerprint: true
 }
 
-stage 'Deploy'
+stage 'Release'
 node {
     configFileProvider([configFile(fileId: 'my-settings-xml', variable: 'mavenSettings')]) {
         def mvnHome = tool 'M3'
